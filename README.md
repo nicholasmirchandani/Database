@@ -14,9 +14,9 @@ Assignment 5: Database
 
 Source Files: BST.cpp, BST.h, Database.cpp, Database.h, DoublyLinkedList.cpp, DoublyLinkedList.h, Faculty.cpp, Faculty.h, GenStack.cpp, GenStack.h, ListNode.cpp, ListNode.h, Record.cpp, Record.h, Student.cpp, Student.h, TreeNode.cpp, TreeNode.h, main.cpp<br/>
 
-Limitations/Deviations: None
+Limitations/Deviations: If invalid facultyTable/studentTable is supplied, program will crash.  Does not occur under normal use, as facultyTable/studentTable are auto-generated
 
-Extra Work: ...
+Extra Work: Functions as a terminal to the database.  Rollbacks can rollback add/delete/change advisor, which means that any change can be rolled back.
 
 References: 
 https://www.learncpp.com/cpp-tutorial/810-const-class-objects-and-member-functions/<br/>

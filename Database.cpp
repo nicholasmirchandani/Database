@@ -1,13 +1,4 @@
 #include "Database.h"
-//TODO: Rollback
-
-/*
-    Kinds of rollback:
-    Inserting student/faculty
-    Deleting student/faculty
-    Changing advisor
-*/
-
 /*
     Empty default constructor
 */

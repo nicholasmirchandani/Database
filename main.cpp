@@ -23,7 +23,7 @@ int main(int argc, char** argv) {
     DoublyLinkedList<std::string> arguments;
     Database myDatabase;
     //Reading from file
-    std::ifstream is("databaseFaculty.txt");
+    std::ifstream is("facultyTable");
     if(!is.fail()) {
         while(!is.eof()) {
             std::string id_string;
@@ -48,7 +48,7 @@ int main(int argc, char** argv) {
         }
     }
     is.close();
-    std::ifstream is2("databaseStudents.txt");
+    std::ifstream is2("studentTable");
     if(!is2.fail()) {
         while(!is2.eof()) {
             std::string id_string;
@@ -241,11 +241,11 @@ int main(int argc, char** argv) {
     }
     std::cout << "Closing." << std::endl;
     std::ofstream os;
-    os.open("databaseFaculty.txt", std::ofstream::out | std::ofstream::trunc);
+    os.open("facultyTable", std::ofstream::out | std::ofstream::trunc);
     myDatabase.printFaculty(os);
     os.close();
 
-    os.open("databaseStudents.txt", std::ofstream::out | std::ofstream::trunc);
+    os.open("studentTable", std::ofstream::out | std::ofstream::trunc);
     myDatabase.printStudents(os);
     os.close();
 }

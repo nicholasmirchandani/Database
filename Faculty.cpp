@@ -95,7 +95,6 @@ void Faculty::addAdvisee(int studentID) {
     Removes advisee from advisees
     studentID: ID of student to remove
 */
-//TODO: Return true if advisee was removed, false otherwise
 void Faculty::removeAdvisee(int studentID) {
     advisees.remove(studentID);
 }
@@ -120,7 +119,6 @@ void Faculty::printAdvisees(std::ostream& os) const{
     Returns true if student is advisee, false otherwise
 */
 bool Faculty::searchAdvisees(int studentID) {
-    //TODO: Refactor this into DoublyLinkedList
     ListNode<int>* curr = advisees.front;
     while(curr != nullptr) {
         if(curr->data == studentID) {
