@@ -22,9 +22,10 @@ Record::Record() {
     id: Desired id of record
     name: Desired name of record
 */
-Record::Record(int id, std::string name) {
+Record::Record(int id, std::string name, std::string addedBy) {
     this->id = id;
     this->name = name;
+    this->addedBy = addedBy;
 }
 
 /*
@@ -49,6 +50,10 @@ void Record::setID(int id) {
 */
 std::string Record::getName() const{
     return name;
+}
+
+std::string Record::getAddedBy() const{
+    return addedBy;
 }
 
 /*

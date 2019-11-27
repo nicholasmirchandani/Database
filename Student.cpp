@@ -27,7 +27,7 @@ Student::Student() {
     gpa: Desired gpa of student
     advisor: Desired advisor's id of student
 */
-Student::Student(int id, std::string name, std::string level, std::string major, double gpa, int advisor) : Record(id, name){ //Initializer list for calling superclass
+Student::Student(int id, std::string name, std::string level, std::string major, double gpa, int advisor, std::string addedBy) : Record(id, name, addedBy){ //Initializer list for calling superclass
     this->level = level;
     this->major = major;
     this->gpa = gpa;
@@ -39,7 +39,7 @@ Student::Student(int id, std::string name, std::string level, std::string major,
     Copy Constructor: Make a deep copy of a student
     s: student to base this copy off of
 */
-Student::Student(const Student& s) : Record(s.getID(), s.getName()){
+Student::Student(const Student& s) : Record(s.getID(), s.getName(), s.getAddedBy()){
     this->level = s.level;
     this->major = s.major;
     this->gpa = s.gpa;
@@ -121,5 +121,6 @@ std::ostream& operator<<(std::ostream& os, const Student& s) { //Operator Overlo
     os << "Major: " << s.major << std::endl;
     os << "GPA: " << s.gpa << std::endl;
     os << "Advisor: " << s.advisor << std::endl;
+    os << "Added By: " << s.getAddedBy() << std::endl;
     return os;
 }

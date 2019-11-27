@@ -10,7 +10,7 @@ class Student : public Record {
         int advisor;
     public:
         Student();
-        Student(int id, std::string name, std::string level, std::string major, double gpa, int advisor);
+        Student(int id, std::string name, std::string level, std::string major, double gpa, int advisor, std::string addedBy);
         Student(const Student& s);
         std::string getLevel() const;
         void setLevel(std::string level);

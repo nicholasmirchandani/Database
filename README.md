@@ -16,7 +16,7 @@ Source Files: BST.cpp, BST.h, Database.cpp, Database.h, DoublyLinkedList.cpp, Do
 
 Limitations/Deviations: If invalid facultyTable/studentTable is supplied, program will crash.  Does not occur under normal use, as facultyTable/studentTable are auto-generated
 
-Extra Work: Functions as a terminal to the database.  Rollbacks can rollback add/delete/change advisor, which means that any change can be rolled back.
+Extra Work: Functions as a terminal to the database.  Rollbacks can rollback add/delete/change advisor, which means that any change can be rolled back.  Keeps track of who added each record between sessions by username and displays that when printing as well.
 
 References: 
 https://www.learncpp.com/cpp-tutorial/810-const-class-objects-and-member-functions/<br/>

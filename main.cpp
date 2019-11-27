@@ -41,9 +41,12 @@ int main(int argc, char** argv) {
             std::string department;
             getline(is, department);
             department = department.substr(12); //Discard first 12 chars
-            Faculty f(id, name, level, department);
-            myDatabase.addFaculty(f, false);
             getline(is, id_string); //Getting rid of extra lines: advisors are accounted for when students are added
+            std::string addedBy;
+            getline(is, addedBy);
+            addedBy = addedBy.substr(10); //Discard first 10 chars
+            Faculty f(id, name, level, department, addedBy);
+            myDatabase.addFaculty(f, false);
             getline(is, id_string); //Getting rid of extra lines
         }
     }
@@ -72,8 +75,11 @@ int main(int argc, char** argv) {
             std::string advisor_string;
             getline(is2, advisor_string);
             int advisor = stoi(advisor_string.substr(9)); //Disard first 9 chars
+            std::string addedBy;
+            getline(is2, addedBy);
+            addedBy = addedBy.substr(10); //Discard first 10 chars
 
-            Student s(id, name, level, major, gpa, advisor);
+            Student s(id, name, level, major, gpa, advisor, addedBy);
             myDatabase.addStudent(s, false);
             getline(is2, id_string); //Getting rid of extra line
         }
@@ -105,7 +111,7 @@ int main(int argc, char** argv) {
                 std::cout << "Faculty department: ";
                 std::getline(std::cin, department);
             }
-            Faculty f(id, name, level, department);
+            Faculty f(id, name, level, department, username);
             myDatabase.addFaculty(f, true);
         } else if(command == "addStudent") {
             int id = getIntFromUser("Student id: ");
@@ -126,7 +132,7 @@ int main(int argc, char** argv) {
             }
             double gpa = getDoubleFromUser("Student gpa: ");
             int advisor = getIntFromUser("Student advisor faculty id: ");
-            Student s(id, name, level, major, gpa, advisor);
+            Student s(id, name, level, major, gpa, advisor, username);
             myDatabase.addStudent(s, true);
         } else if(command == "changeAdvisor") {
             if(arguments.front->next == nullptr || arguments.front->next->next == nullptr) {  //if arguments[1] or arguments[2] does not exist

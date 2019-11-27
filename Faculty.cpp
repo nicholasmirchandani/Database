@@ -24,7 +24,7 @@ Faculty::Faculty() {
     level: Desired faculty level
     department: Desired faculty department
 */
-Faculty::Faculty(int id, std::string name, std::string level, std::string department) : Record(id, name) {
+Faculty::Faculty(int id, std::string name, std::string level, std::string department, std::string addedBy) : Record(id, name, addedBy) {
     this->level = level;
     this->department = department;
 }
@@ -33,7 +33,7 @@ Faculty::Faculty(int id, std::string name, std::string level, std::string depart
     Copy Constructor: Used to make deep copy of faculty
     f: faculty to base this copy off of
 */
-Faculty::Faculty(const Faculty& f) : Record(f.getID(), f.getName()) {
+Faculty::Faculty(const Faculty& f) : Record(f.getID(), f.getName(), f.getAddedBy()) {
     this->level = f.level;
     this->department = f.department;
     this->advisees = DoublyLinkedList<int>();
@@ -139,5 +139,6 @@ std::ostream& operator<<(std::ostream& os, const Faculty& f) { //Operator Overlo
     os << "Department: " << f.department << std::endl;
     os << "Advisees: ";
     f.printAdvisees(os);
+    os << "Added by: " << f.getAddedBy() << std::endl;
     return os;
 }

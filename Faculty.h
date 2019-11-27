@@ -8,7 +8,7 @@ class Faculty : public Record {
         std::string department;
     public:
         Faculty();
-        Faculty(int id, std::string name, std::string level, std::string department);
+        Faculty(int id, std::string name, std::string level, std::string department, std::string addedBy);
         Faculty(const Faculty& f);
         ~Faculty();
         std::string getLevel() const;
